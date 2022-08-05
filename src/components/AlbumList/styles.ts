@@ -4,12 +4,12 @@ type AlbumClick = {
   onClick: () => void
 }
 
-export const Container = styled.div`
+export const AlbumContainer = styled.ul`
   margin: 0 auto;
   width: 80%;
 `
 
-export const AlbumItem = styled.div<AlbumClick>`
+export const AlbumItem = styled.li<AlbumClick>`
   border: 3px solid #000;
   margin: 0 10px 10px 10px;
   background-color: #fff;

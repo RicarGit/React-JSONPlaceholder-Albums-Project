@@ -34,7 +34,7 @@ export const AlbumList = () => {
   }, [])
 
   return (
-    <S.Container>
+    <S.AlbumContainer>
       {albums.length <= 0 &&
         'Nenhum Album Encontrado!!!'
       }
@@ -52,6 +52,6 @@ export const AlbumList = () => {
         )
       })
       }
-    </S.Container >
+    </S.AlbumContainer >
   )
 }

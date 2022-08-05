@@ -1,0 +1,26 @@
+import styled from "styled-components/macro"
+
+type AlbumClick = {
+  onClick: () => void
+}
+
+export const Container = styled.div`
+  margin: 0 auto;
+  width: 80%;
+`
+
+export const AlbumItem = styled.div<AlbumClick>`
+  border: 3px solid #000;
+  margin: 0 10px 10px 10px;
+  background-color: #fff;
+  transition: all .2s ease;
+
+  &:hover {
+    border-color: orangered;
+    color: orangered;
+  }
+`
+
+export const AlbumTitle = styled.h3`
+  padding: 20px;
+`

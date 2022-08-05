@@ -1,8 +1,12 @@
 import { Header } from "./components/Header"
+import { AlbumList } from "./components/AlbumList/"
 
 function App() {
   return (
-    <Header />
+    <>
+      <Header />
+      <AlbumList />
+    </>
   )
 }
 

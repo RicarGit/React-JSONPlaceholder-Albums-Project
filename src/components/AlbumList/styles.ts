@@ -14,6 +14,7 @@ export const AlbumItem = styled.li<AlbumClick>`
   margin: 0 10px 10px 10px;
   background-color: #fff;
   transition: all .2s ease;
+  cursor: pointer;
 
   &:hover {
     border-color: orangered;

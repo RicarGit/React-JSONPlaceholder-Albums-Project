@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
 import * as S from './styles'
-
 import axios from 'axios'
-const baseUrl = 'https://jsonplaceholder.typicode.com'
+
+const axiosInstance = axios.create({
+  baseURL: 'https://jsonplaceholder.typicode.com'
+})
 
 type Album = {
   userId: number
@@ -16,7 +18,7 @@ export const AlbumList = () => {
   useEffect(() => {
     const getAlbums = async () => {
       try {
-        const response = await axios.get(`${baseUrl}/albums`)
+        const response = await axiosInstance.get('/albums')
 
         if (response.statusText !== 'OK') {
           throw new Error("Dados não Encontrados!")

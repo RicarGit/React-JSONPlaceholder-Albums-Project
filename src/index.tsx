@@ -1,5 +1,6 @@
 import { StrictMode } from 'react'
 import ReactDom from 'react-dom/client'
+import { BrowserRouter } from 'react-router-dom'
 
 import { createGlobalStyle } from 'styled-components'
 import App from './App'
@@ -29,7 +30,9 @@ const root = ReactDom.createRoot(
 )
 root.render(
   <StrictMode>
-    <GlobalStyle />
-    <App />
+    <BrowserRouter>
+      <GlobalStyle />
+      <App />
+    </BrowserRouter>
   </StrictMode>
 )

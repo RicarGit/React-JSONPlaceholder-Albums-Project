@@ -22,8 +22,8 @@ export const AlbumList = () => {
           throw new Error("Dados não Encontrados!")
         }
 
-        const albumData = response.data
-        setAlbums(albumData)
+        const albumsData = response.data
+        setAlbums(albumsData)
 
       } catch (error) {
         alert(error)

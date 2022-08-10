@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 
 import * as S from './styles'
 import Photo from 'types/PhotoType'
@@ -9,10 +9,11 @@ const axiosInstance = axios.create({ baseURL: `https://jsonplaceholder.typicode.
 
 export const PhotoList = () => {
   const [photos, setPhotos] = useState<Photo[]>([])
+  const { albumID } = useParams()
 
   useEffect(() => {
     const getPhotos = async () => {
-      const response = await axiosInstance.get(`/albums/1/photos`)
+      const response = await axiosInstance.get(`/albums/${albumID}/photos`)
 
       if (response.data) {
         setPhotos(response.data)
@@ -20,7 +21,7 @@ export const PhotoList = () => {
     }
 
     getPhotos()
-  }, [])
+  }, [albumID])
 
   return (
     <S.PhotoListContainer>
@@ -33,7 +34,7 @@ export const PhotoList = () => {
         return (
           <Link key={photo.id} to={`/photos/${photo.id}`}>
             <S.PhotoItem>
-              <S.PhotoThumb src={photo.thumbnailUrl} alt='thumbPhoto' />
+              <S.PhotoThumb src={photo.thumbnailUrl} alt='thumbnail_150x150' />
             </S.PhotoItem>
           </Link>
         )

@@ -1,7 +1,10 @@
 import { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
+
 import * as S from './styles'
 import Album from 'types/AlbumType'
 
+import axios from "axios"
 const axiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com'
 })
@@ -37,14 +40,13 @@ export const AlbumList = () => {
 
       {albums.map(({ id, title }) => {
         return (
-          <S.AlbumItem
-            key={id}
-            onClick={() => console.log(id)
-            }>
-            <S.AlbumTitle>
-              {title}
-            </S.AlbumTitle>
-          </S.AlbumItem>
+          <Link key={id} to={`/albums/${id}/photos`}>
+            <S.AlbumItem key={id}>
+              <S.AlbumTitle>
+                {title}
+              </S.AlbumTitle>
+            </S.AlbumItem>
+          </Link>
         )
       })
       }

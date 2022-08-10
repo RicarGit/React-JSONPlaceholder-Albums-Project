@@ -40,7 +40,7 @@ export const AlbumList = () => {
 
       {albums.map(({ id, title }) => {
         return (
-          <Link key={id} to={`/albums/${id}/photos`}>
+          <Link key={id} to={`/albums/${id}`}>
             <S.AlbumItem key={id}>
               <S.AlbumTitle>
                 {title}

@@ -13,6 +13,11 @@ export const PhotoItem = styled.li`
   margin: 15px;
   padding: 20px;
   border: 3px solid orangered;
+  transition: all .15s linear;
+
+  &:hover {
+    transform: scale(1.06);
+  }
 `
 
 export const PhotoThumb = styled.img`

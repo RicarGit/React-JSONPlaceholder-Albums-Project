@@ -3,6 +3,10 @@ import styled from "styled-components/macro"
 export const AlbumContainer = styled.ul`
   margin: 0 auto;
   width: 80%;
+
+  a {
+    color: inherit;
+  }
 `
 
 export const AlbumItem = styled.li`
@@ -15,6 +19,7 @@ export const AlbumItem = styled.li`
   &:hover {
     border-color: orangered;
     color: orangered;
+    transform: scale(1.012);
   }
 `
 

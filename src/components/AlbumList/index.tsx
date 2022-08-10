@@ -1,16 +1,10 @@
 import { useEffect, useState } from 'react'
 import * as S from './styles'
-import axios from 'axios'
+import Album from 'types/AlbumType'
 
 const axiosInstance = axios.create({
   baseURL: 'https://jsonplaceholder.typicode.com'
 })
-
-type Album = {
-  userId: number
-  id: number
-  title: string
-}
 
 export const AlbumList = () => {
   const [albums, setAlbums] = useState<Album[]>([])

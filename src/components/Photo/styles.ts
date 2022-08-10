@@ -8,7 +8,6 @@ export const PhotoBigContainer = styled.div`
 `
 
 export const PhotoImage = styled.img`
-  height: 600px;
-  width: 600px;
-  background-color: orange;
+  padding: 30px;
+  border: 3px solid orangered;
 `

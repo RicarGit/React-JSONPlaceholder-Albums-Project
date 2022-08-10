@@ -10,10 +10,9 @@ export const PhotoListContainer = styled.ul`
 `
 
 export const PhotoItem = styled.li`
-  height: 150px;
-  width: 150px;
   margin: 15px;
-  border: 3px solid blue;
+  padding: 20px;
+  border: 3px solid orangered;
 `
 
 export const PhotoThumb = styled.img`

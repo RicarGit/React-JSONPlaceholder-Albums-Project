@@ -14,12 +14,10 @@ export const AlbumList = () => {
       try {
         const response = await api('/albums')
 
-        if (response.statusText !== 'OK') {
-          throw new Error("Dados não Encontrados!")
+        if (response.data) {
+          const albumsData = response.data
+          setAlbums(albumsData)
         }
-
-        const albumsData = response.data
-        setAlbums(albumsData)
 
       } catch (error) {
         alert(error)

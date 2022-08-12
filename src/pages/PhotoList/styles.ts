@@ -29,11 +29,12 @@ export const PhotoListContainer = styled.ul`
 export const PhotoItem = styled.li`
   margin: 15px;
   padding: 20px;
-  border: 3px solid orangered;
+  border: 3px solid #000;
   transition: all .15s linear;
 
   &:hover {
     transform: scale(1.06);
+    border-color: orangered;
   }
 
   @media (max-width: 560px) {

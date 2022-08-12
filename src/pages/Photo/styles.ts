@@ -19,7 +19,12 @@ export const PhotoBigContainer = styled.div`
 
 export const PhotoImage = styled.img`
   padding: 30px;
-  border: 3px solid orangered;
+  border: 3px solid #000;
+  transition: all .4s ease;
+
+  &:hover {
+    border-color: orangered;
+  }
 
   @media (max-width: 900px) {
     padding: 20px;

@@ -25,6 +25,6 @@ export const Title = styled.h1`
   font-weight: bold;
 
   @media (max-width: 560px) {
-    font-size: 35px;
+    font-size: 40px;
   }
 `

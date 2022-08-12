@@ -2,6 +2,8 @@ import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
 import { PagesBackButton } from 'shared/PagesBackButton'
+import { ScrollToTop } from 'shared/ScrollToTop'
+
 import * as S from './styles'
 import Photo from 'types/PhotoType'
 
@@ -39,7 +41,7 @@ export const PhotoList = () => {
           </Link>
         )
       })}
-
+      <ScrollToTop />
     </S.PhotoListContainer>
   )
 }

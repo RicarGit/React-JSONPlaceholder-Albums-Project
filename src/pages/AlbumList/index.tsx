@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
 
+import { ScrollToTop } from 'shared/ScrollToTop'
+
 import * as S from './styles'
 import Album from 'types/AlbumType'
 
@@ -45,6 +47,7 @@ export const AlbumList = () => {
         )
       })
       }
-    </S.AlbumContainer >
+      <ScrollToTop />
+    </S.AlbumContainer>
   )
 }

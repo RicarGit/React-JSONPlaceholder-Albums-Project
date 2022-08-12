@@ -1,6 +1,7 @@
 import styled from "styled-components/macro"
 
 export const PhotoListContainer = styled.ul`
+  position: relative;
   margin: 0 auto;
   width: 80vw;
   display: flex;

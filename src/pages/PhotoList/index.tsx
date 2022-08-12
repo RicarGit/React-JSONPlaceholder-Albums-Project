@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Link, useParams } from 'react-router-dom'
 
+import { PagesBackButton } from 'shared/PagesBackButton'
 import * as S from './styles'
 import Photo from 'types/PhotoType'
 
@@ -24,7 +25,7 @@ export const PhotoList = () => {
 
   return (
     <S.PhotoListContainer>
-
+      <PagesBackButton />
       {photos.length <= 0 &&
         "Carregando..."
       }

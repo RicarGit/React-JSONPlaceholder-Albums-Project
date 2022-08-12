@@ -1,6 +1,7 @@
 import styled from "styled-components/macro"
 
 export const PhotoBigContainer = styled.div`
+  position: relative;
   width: 80vw;
   margin: 0 auto;
   display: flex;

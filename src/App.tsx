@@ -1,6 +1,6 @@
-import { Header } from "./components/Header"
+import { Header } from "./pages/Header"
 import { MainRoutes } from "routes/MainRoutes"
-import { Footer } from "./components/Footer"
+import { Footer } from "./pages/Footer"
 
 function App() {
   return (

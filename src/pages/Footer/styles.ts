@@ -9,4 +9,12 @@ export const FooterContainer = styled.footer`
   font-weight: bold;
   color: orangered;
   border-top: 3px solid orangered;
+
+  @media (max-width: 560px) {
+    height: 60px;
+    width: 90vw;
+    margin: 30px auto 0 auto;
+    padding-left: 10px;
+    font-size: 18px;
+  }
 `

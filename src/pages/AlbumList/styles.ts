@@ -7,6 +7,10 @@ export const AlbumContainer = styled.ul`
   a {
     color: inherit;
   }
+
+  @media (max-width: 560px) {
+    width: 90%;
+  }
 `
 
 export const AlbumItem = styled.li`
@@ -25,4 +29,8 @@ export const AlbumItem = styled.li`
 
 export const AlbumTitle = styled.h3`
   padding: 20px;
+
+  @media (max-width: 560px) {
+    padding: 15px;
+  }
 `

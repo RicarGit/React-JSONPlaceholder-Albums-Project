@@ -1,9 +1,9 @@
 import { useRoutes } from "react-router-dom"
 
-import { AlbumList } from "components/AlbumList"
-import { PhotoList } from "components/PhotoList"
-import { Photo } from "components/Photo"
-import { PageNotFound } from "components/PageNotFound"
+import { AlbumList } from "pages/AlbumList"
+import { PhotoList } from "pages/PhotoList"
+import { Photo } from "pages/Photo"
+import { PageNotFound } from "pages/PageNotFound"
 
 
 export const MainRoutes = () => {

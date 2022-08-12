@@ -1,6 +1,6 @@
 # This is an exercise project for learning purpose!!!
 
-## You can check the project by clicking [Here!]('https://react-jsonplaceholder-albums-project.netlify.app/)
+## You can check the project byclicking [Here!](https://react-jsonplaceholder-albums-project.netlify.app/)
 
 ## Technologies used in this project:
 
@@ -8,5 +8,5 @@
 - ReactJS 18
 - Node
 - Axios
-- React Router Dom
-- Styled-Components
+- React Routers
+- styled-components

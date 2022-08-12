@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import * as S from './styles'
 
-import axios from 'axios'
-const axiosInstance = axios.create({ baseURL: `https://jsonplaceholder.typicode.com` })
+import { api } from 'services/api'
 
 export const Photo = () => {
   const [photoUrl, setPhotoUrl] = useState('')
@@ -11,7 +10,7 @@ export const Photo = () => {
 
   useEffect(() => {
     const getPhotoUrl = async () => {
-      const response = await axiosInstance.get(`/photos/${photoID}`)
+      const response = await api(`/photos/${photoID}`)
 
       if (response.data) {
         setPhotoUrl(response.data.url)
@@ -23,7 +22,7 @@ export const Photo = () => {
 
   return (
     <S.PhotoBigContainer>
-      {photoUrl ? <S.PhotoImage src={photoUrl} alt={'photo_600x600'} /> : "A Foto Não Existe."}
+      {photoUrl ? <S.PhotoImage src={photoUrl} alt={'photo_600x600'} /> : "Carregando..."}
     </S.PhotoBigContainer>
   )
 }

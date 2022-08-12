@@ -4,10 +4,7 @@ import { Link } from 'react-router-dom'
 import * as S from './styles'
 import Album from 'types/AlbumType'
 
-import axios from "axios"
-const axiosInstance = axios.create({
-  baseURL: 'https://jsonplaceholder.typicode.com'
-})
+import { api } from 'services/api'
 
 export const AlbumList = () => {
   const [albums, setAlbums] = useState<Album[]>([])
@@ -15,7 +12,7 @@ export const AlbumList = () => {
   useEffect(() => {
     const getAlbums = async () => {
       try {
-        const response = await axiosInstance.get('/albums')
+        const response = await api('/albums')
 
         if (response.statusText !== 'OK') {
           throw new Error("Dados não Encontrados!")
@@ -35,7 +32,7 @@ export const AlbumList = () => {
   return (
     <S.AlbumContainer>
       {albums.length <= 0 &&
-        'Nenhum Album Encontrado!!!'
+        'Carregando...'
       }
 
       {albums.map(({ id, title }) => {

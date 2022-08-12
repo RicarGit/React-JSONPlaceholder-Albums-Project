@@ -4,8 +4,7 @@ import { Link, useParams } from 'react-router-dom'
 import * as S from './styles'
 import Photo from 'types/PhotoType'
 
-import axios from 'axios'
-const axiosInstance = axios.create({ baseURL: `https://jsonplaceholder.typicode.com` })
+import { api } from 'services/api'
 
 export const PhotoList = () => {
   const [photos, setPhotos] = useState<Photo[]>([])
@@ -13,7 +12,7 @@ export const PhotoList = () => {
 
   useEffect(() => {
     const getPhotos = async () => {
-      const response = await axiosInstance.get(`/albums/${albumID}/photos`)
+      const response = await api(`albums/${albumID}/photos`)
 
       if (response.data) {
         setPhotos(response.data)
@@ -27,7 +26,7 @@ export const PhotoList = () => {
     <S.PhotoListContainer>
 
       {photos.length <= 0 &&
-        "Não Existe nenhuma foto neste álbum."
+        "Carregando..."
       }
 
       {photos.map(photo => {

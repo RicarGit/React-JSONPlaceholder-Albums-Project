@@ -20,4 +20,11 @@ export const ScrollToTopContainer = styled.div<Visible>`
   cursor: pointer;
   transition: opacity .5s ease-in-out;
   opacity: ${({ isVisible }) => isVisible ? '100' : '0'};
+
+  @media (max-width: 560px) {
+    height: 50px;
+    width: 50px;
+    margin: 8px;
+    line-height: 2.9;
+  }
 `

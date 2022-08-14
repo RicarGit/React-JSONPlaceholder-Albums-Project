@@ -12,13 +12,12 @@ export const AlbumList = () => {
   const [albums, setAlbums] = useState<Album[]>([])
 
   useEffect(() => {
-    const getAlbums = async () => {
+    const getAlbumList = async () => {
       try {
-        const response = await api('/albums')
+        const albumList = await api.getAlbums()
 
-        if (response.data) {
-          const albumsData = response.data
-          setAlbums(albumsData)
+        if (albumList) {
+          setAlbums(albumList)
         }
 
       } catch (error) {
@@ -26,7 +25,7 @@ export const AlbumList = () => {
       }
     }
 
-    getAlbums()
+    getAlbumList()
   }, [])
 
   return (

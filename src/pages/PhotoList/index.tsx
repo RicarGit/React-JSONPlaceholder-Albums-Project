@@ -14,15 +14,17 @@ export const PhotoList = () => {
   const { albumID } = useParams()
 
   useEffect(() => {
-    const getPhotos = async () => {
-      const response = await api(`albums/${albumID}/photos`)
+    const getPhotoList = async () => {
+      if (albumID) {
+        const photoList = await api.getPhotos(albumID)
 
-      if (response.data) {
-        setPhotos(response.data)
+        if (photoList) {
+          setPhotos(photoList)
+        }
       }
     }
 
-    getPhotos()
+    getPhotoList()
   }, [albumID])
 
   return (

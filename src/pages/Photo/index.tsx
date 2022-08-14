@@ -12,10 +12,12 @@ export const Photo = () => {
 
   useEffect(() => {
     const getPhotoUrl = async () => {
-      const response = await api(`/photos/${photoID}`)
+      if (photoID) {
+        const url = await api.getPhotoUrl(photoID)
 
-      if (response.data) {
-        setPhotoUrl(response.data.url)
+        if (url) {
+          setPhotoUrl(url)
+        }
       }
     }
 

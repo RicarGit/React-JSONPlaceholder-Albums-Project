@@ -7,17 +7,21 @@ import * as S from './styles'
 import Album from 'types/AlbumType'
 
 import { api } from 'services/api'
+import { Loading } from 'shared/Loading'
 
 export const AlbumList = () => {
   const [albums, setAlbums] = useState<Album[]>([])
+  const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
     const getAlbumList = async () => {
       try {
+        setIsLoading(true)
         const albumList = await api.getAlbums()
 
         if (albumList) {
           setAlbums(albumList)
+          setIsLoading(false)
         }
 
       } catch (error) {
@@ -30,8 +34,8 @@ export const AlbumList = () => {
 
   return (
     <S.AlbumContainer>
-      {albums.length <= 0 &&
-        'Carregando...'
+      {isLoading &&
+        <Loading />
       }
 
       {albums.map(({ id, title }) => {
@@ -46,6 +50,7 @@ export const AlbumList = () => {
         )
       })
       }
+
       <ScrollToTop />
     </S.AlbumContainer>
   )

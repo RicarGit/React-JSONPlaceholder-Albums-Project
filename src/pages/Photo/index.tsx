@@ -1,14 +1,17 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
+import { api } from 'services/api'
 
-import { PagesBackButton } from 'shared/PagesBackButton'
 import * as S from './styles'
 
-import { api } from 'services/api'
+import { PagesBackButton } from 'shared/PagesBackButton'
 import { Loading } from 'shared/Loading'
+import { Title } from 'shared/Title'
+
+import PhotoType from 'types/PhotoType'
 
 export const Photo = () => {
-  const [photoUrl, setPhotoUrl] = useState('')
+  const [photo, setPhoto] = useState<PhotoType>()
   const [isLoading, setIsLoading] = useState(false)
   const { photoID } = useParams()
 
@@ -16,10 +19,10 @@ export const Photo = () => {
     const getPhotoUrl = async () => {
       if (photoID) {
         setIsLoading(true)
-        const url = await api.getPhotoUrl(photoID)
+        const photo = await api.getPhoto(photoID)
 
-        if (url) {
-          setPhotoUrl(url)
+        if (photo) {
+          setPhoto(photo)
           setIsLoading(false)
         }
       }
@@ -28,6 +31,7 @@ export const Photo = () => {
     getPhotoUrl()
   }, [photoID])
 
+
   return (
     <S.PhotoBigContainer>
       <PagesBackButton />
@@ -35,8 +39,11 @@ export const Photo = () => {
         <Loading />
       }
 
-      {photoUrl &&
-        <S.PhotoImage src={photoUrl} alt={'photo_600x600'} />
+      {photo &&
+        <>
+          <Title title={photo.title} />
+          <S.PhotoImage src={photo.url} alt={'photo_600x600'} />
+        </>
       }
     </S.PhotoBigContainer>
   )

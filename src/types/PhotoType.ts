@@ -1,4 +1,4 @@
-type Photo = {
+type PhotoType = {
   albumId: number
   id: number
   title: string
@@ -6,4 +6,4 @@ type Photo = {
   thumbnailUrl: string
 }
 
-export default Photo
+export default PhotoType

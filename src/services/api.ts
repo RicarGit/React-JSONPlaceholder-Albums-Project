@@ -16,8 +16,9 @@ export const api = {
     const response = await axiosInstance(`albums/${albumID}/photos`)
     return response.data
   },
-  async getPhotoUrl(photoID: string) {
+
+  async getPhoto(photoID: string) {
     const response = await axiosInstance(`/photos/${photoID}`)
-    return response.data.url
+    return response.data
   }
 }

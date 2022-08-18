@@ -4,6 +4,8 @@
 
 ## You can check the project by clicking [Here!](https://react-jsonplaceholder-albums-project.netlify.app/)
 
+---
+
 ## Technologies used in this project:
 
 - Typescript
@@ -12,3 +14,15 @@
 - Axios
 - React Routers
 - Styled-Components
+  
+---
+
+## My customizations in this project:
+
+- All animations
+- Color styles
+- Page not found
+- Loading component
+- Scroll to top component
+- Footer component
+- Responsivity

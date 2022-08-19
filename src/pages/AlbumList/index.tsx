@@ -1,17 +1,24 @@
 import { useEffect, useState } from 'react'
 import { Link } from 'react-router-dom'
-
-import { ScrollToTop } from 'shared/ScrollToTop'
+import { api } from 'services/api'
 
 import * as S from './styles'
 import Album from 'types/AlbumType'
 
-import { api } from 'services/api'
+import { ScrollToTop } from 'shared/ScrollToTop'
 import { Loading } from 'shared/Loading'
+import { Pagination } from 'shared/Pagination'
 
 export const AlbumList = () => {
   const [albums, setAlbums] = useState<Album[]>([])
+  const [albumsPerPage] = useState(8)
+  const [currentPage, setCurrentPage] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
+
+  const pages = Math.ceil(albums.length / albumsPerPage)
+  const startIndex = currentPage * albumsPerPage
+  const endIndex = startIndex + albumsPerPage
+  const currentAlbums = albums.slice(startIndex, endIndex)
 
   useEffect(() => {
     const getAlbumList = async () => {
@@ -33,25 +40,28 @@ export const AlbumList = () => {
   }, [])
 
   return (
-    <S.AlbumContainer>
-      {isLoading &&
-        <Loading />
-      }
+    <>
+      <S.AlbumContainer>
+        {isLoading &&
+          <Loading />
+        }
 
-      {albums.map(({ id, title }) => {
-        return (
-          <Link key={id} to={`/albums/${id}`}>
-            <S.AlbumItem key={id}>
-              <S.AlbumTitle>
-                {title}
-              </S.AlbumTitle>
-            </S.AlbumItem>
-          </Link>
-        )
-      })
-      }
+        {currentAlbums.map(({ id, title }) => {
+          return (
+            <Link key={id} to={`/albums/${id}`}>
+              <S.AlbumItem key={id}>
+                <S.AlbumTitle>
+                  {title}
+                </S.AlbumTitle>
+              </S.AlbumItem>
+            </Link>
+          )
+        })
+        }
 
-      <ScrollToTop />
-    </S.AlbumContainer>
+        <ScrollToTop />
+      </S.AlbumContainer>
+      <Pagination pages={pages} setCurrentPage={setCurrentPage} />
+    </>
   )
 }

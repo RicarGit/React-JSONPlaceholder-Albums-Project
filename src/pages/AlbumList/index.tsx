@@ -11,10 +11,10 @@ import { Pagination } from 'shared/Pagination'
 
 export const AlbumList = () => {
   const [albums, setAlbums] = useState<Album[]>([])
-  const [albumsPerPage] = useState(8)
   const [currentPage, setCurrentPage] = useState(0)
   const [isLoading, setIsLoading] = useState(false)
 
+  const albumsPerPage = 8
   const pages = Math.ceil(albums.length / albumsPerPage)
   const startIndex = currentPage * albumsPerPage
   const endIndex = startIndex + albumsPerPage

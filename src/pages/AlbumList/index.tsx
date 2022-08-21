@@ -5,7 +5,6 @@ import { api } from 'services/api'
 import * as S from './styles'
 import Album from 'types/AlbumType'
 
-import { ScrollToTop } from 'shared/ScrollToTop'
 import { Loading } from 'shared/Loading'
 import { Pagination } from 'shared/Pagination'
 

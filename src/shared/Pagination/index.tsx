@@ -3,12 +3,11 @@ import * as S from './styles'
 
 type Pages = {
   pages: number
+  currentPage: number
   setCurrentPage: React.Dispatch<SetStateAction<number>>
 }
 
-export const Pagination = ({ pages, setCurrentPage }: Pages) => {
-  const [isActive, setIsActive] = useState(false)
-
+export const Pagination = ({ pages, currentPage, setCurrentPage }: Pages) => {
   return (
     <S.Container>
       <>
@@ -17,10 +16,7 @@ export const Pagination = ({ pages, setCurrentPage }: Pages) => {
           .map((_, index) =>
             <S.PageButton
               key={index}
-              onClick={() => {
-                setCurrentPage(index)
-                setIsActive(!isActive)
-              }}
+            className={currentPage === index ? 'active' : ''}
             >
               {index + 1}
             </S.PageButton>

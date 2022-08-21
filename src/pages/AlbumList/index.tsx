@@ -61,7 +61,7 @@ export const AlbumList = () => {
 
         <ScrollToTop />
       </S.AlbumContainer>
-      <Pagination pages={pages} setCurrentPage={setCurrentPage} />
+      <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
     </>
   )
 }

@@ -1,4 +1,8 @@
-# This is an exercise project for learning purpose!!!
+# This is an exercise project proposed by B7Web!!!
+
+## The objective is to create 3 pages using fake api JSONPlaceholder and recently learned Axios and React Routers!
+
+---
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/154918cc-0705-4db0-84b6-daa85dc10e9c/deploy-status)](https://app.netlify.com/sites/react-jsonplaceholder-albums-project/deploys)
 
@@ -26,3 +30,4 @@
 - Scroll to top component
 - Footer component
 - Responsivity
+- Simple pagination in album list page

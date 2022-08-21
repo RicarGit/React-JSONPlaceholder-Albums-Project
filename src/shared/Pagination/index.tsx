@@ -1,4 +1,4 @@
-import { useState, SetStateAction } from 'react'
+import { SetStateAction } from 'react'
 import * as S from './styles'
 
 type Pages = {
@@ -10,18 +10,17 @@ type Pages = {
 export const Pagination = ({ pages, currentPage, setCurrentPage }: Pages) => {
   return (
     <S.Container>
-      <>
-        {Array
-          .from({ length: pages })
-          .map((_, index) =>
-            <S.PageButton
-              key={index}
+      {Array
+        .from({ length: pages })
+        .map((_, index) =>
+          <S.PageButton
+            key={index}
             className={currentPage === index ? 'active' : ''}
-            >
-              {index + 1}
-            </S.PageButton>
-          )}
-      </>
+            onClick={() => setCurrentPage(index)}
+          >
+            {index + 1}
+          </S.PageButton>
+        )}
     </S.Container>
   )
 }

@@ -40,28 +40,25 @@ export const AlbumList = () => {
   }, [])
 
   return (
-    <>
-      <S.AlbumContainer>
-        {isLoading &&
-          <Loading />
-        }
+    <S.AlbumContainer>
+      {isLoading &&
+        <Loading />
+      }
 
-        {currentAlbums.map(({ id, title }) => {
-          return (
-            <Link key={id} to={`/albums/${id}`}>
-              <S.AlbumItem key={id}>
-                <S.AlbumTitle>
-                  {title}
-                </S.AlbumTitle>
-              </S.AlbumItem>
-            </Link>
-          )
-        })
-        }
+      {currentAlbums.map(({ id, title }) => {
+        return (
+          <Link key={id} to={`/albums/${id}`}>
+            <S.AlbumItem key={id}>
+              <S.AlbumTitle>
+                {title}
+              </S.AlbumTitle>
+            </S.AlbumItem>
+          </Link>
+        )
+      })
+      }
 
-        <ScrollToTop />
-      </S.AlbumContainer>
       <Pagination pages={pages} currentPage={currentPage} setCurrentPage={setCurrentPage} />
-    </>
+    </S.AlbumContainer>
   )
 }

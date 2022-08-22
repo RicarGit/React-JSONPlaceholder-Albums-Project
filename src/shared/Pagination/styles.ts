@@ -2,6 +2,7 @@ import styled from "styled-components/macro"
 
 export const Container = styled.ul`
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 80vw;
   margin: 30px auto 0 auto;
@@ -20,6 +21,7 @@ export const PageButton = styled.li`
   &.active {
     color: orangered;
     border-color: orangered;
+    cursor: default;
     transform: scale(1.3);
   }
 

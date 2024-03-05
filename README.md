@@ -1,6 +1,6 @@
 # This is an exercise project proposed by B7Web!!!
 
-## The objective is to create 3 pages using fake api JSONPlaceholder and recently learned Axios and React Routers!
+## The objective is to create 3 pages using JSONPlaceholder, a fake api, and learn to use Axios and React Routers in this project!
 
 ---
 
